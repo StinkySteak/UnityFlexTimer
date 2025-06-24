@@ -4,43 +4,43 @@ An Lightweight Efficient Timer for Unity. Inspired by Photon Fusion TickTimer
 
 #### Simulation Timer
 
-![](https://github.com/StinkySteak/com.stinkysteak.simulationtimer/blob/main/Gif/DefaultTimer.gif)
+![](https://github.com/StinkySteak/UnityFlexTimer/blob/docs/DefaultTimer.gif)
 
-```csharp
-private SimulationTimer _disableTimer;
+```cs
+private FlexTimer _disableTimer;
 
 private void Start()
 {
-    _disableTimer = SimulationTimer.CreateFromSeconds(_delay);
+    _disableTimer = FlexTimer.CreateFromSeconds(_delay);
 }
 
 private void Update()
 {
-    if(_disableTimer.IsExpired())
+    if (_disableTimer.IsExpired())
     {
         _gameObject.SetActive(false);
-        _disableTimer = SimulationTimer.None;
+        _disableTimer = FlexTimer.None;
     }
 }
 ```
 
 #### Pauseable Simulation Timer
 
-![](https://github.com/StinkySteak/com.stinkysteak.simulationtimer/blob/main/Gif/PauseableTimer.gif)
+![](https://github.com/StinkySteak/UnityFlexTimer/blob/docs/PauseableTimer.gif)
 
-```csharp
-private PauseableSimulationTimer _timer;
+```cs
+private PauseableFlexTimer _timer;
 
-public PauseableSimulationTimer Timer => _timer;
+public PauseableFlexTimer Timer => _timer;
 
 private void Start()
 {
-    _timer = PauseableSimulationTimer.CreateFromSeconds(_delay);
+    _timer = PauseableFlexTimer.CreateFromSeconds(_delay);
 }
 
 public void TogglePause()
 {
-    if(!_timer.IsPaused)
+    if (!_timer.IsPaused)
     {
         _timer.Pause();
         return;
@@ -51,10 +51,10 @@ public void TogglePause()
 
 private void Update()
 {
-    if(_timer.IsExpired())
+    if (_timer.IsExpired())
     {
         _gameObject.SetActive(false);
-        _timer = PauseableSimulationTimer.None;
+        _timer = PauseableFlexTimer.None;
     }
 }
 ```

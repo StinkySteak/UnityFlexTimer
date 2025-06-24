@@ -1,18 +1,18 @@
 using UnityEngine;
 
-namespace StinkySteak.SimulationTimer
+namespace StinkySteak.Timer
 {
-    public struct SimulationTimer
+    public struct FlexTimer
     {
-        public static SimulationTimer None => default;
+        public static FlexTimer None => default;
 
         private float _targetTime;
 
         public float TargetTime => _targetTime;
 
-        public static SimulationTimer CreateFromSeconds(float duration)
+        public static FlexTimer CreateFromSeconds(float duration)
         {
-            return new SimulationTimer()
+            return new FlexTimer()
             {
                 _targetTime = duration + Time.time
             };

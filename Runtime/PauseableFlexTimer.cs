@@ -2,9 +2,9 @@ using UnityEngine;
 
 namespace StinkySteak.SimulationTimer
 {
-    public struct PauseableSimulationTimer
+    public struct PauseableFlexTimer
     {
-        public static PauseableSimulationTimer None => default;
+        public static PauseableFlexTimer None => default;
 
         private float _targetTime;
         private bool _isPaused;
@@ -24,9 +24,9 @@ namespace StinkySteak.SimulationTimer
             return _targetTime + Time.time - _pauseAtTime;
         }
 
-        public static PauseableSimulationTimer CreateFromSeconds(float duration)
+        public static PauseableFlexTimer CreateFromSeconds(float duration)
         {
-            return new PauseableSimulationTimer()
+            return new PauseableFlexTimer()
             {
                 _targetTime = duration + Time.time
             };
