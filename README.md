@@ -58,6 +58,3 @@ private void Update()
     }
 }
 ```
-## Class Reference
-`SimulationTimer`: Default Timer    
-`PauseableTimer`: Pauseable Timer
