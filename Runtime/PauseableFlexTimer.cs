@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace StinkySteak.SimulationTimer
+namespace StinkySteak.Timer
 {
     public struct PauseableFlexTimer
     {
